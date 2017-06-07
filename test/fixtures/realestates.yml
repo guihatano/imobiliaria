@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  re_type: MyString
+  street: MyString
+  district: MyString
+  city: MyString
+  state: MyString
+  category: MyString
+  price: 1.5
+  description: MyText
+  img: 
+
+two:
+  re_type: MyString
+  street: MyString
+  district: MyString
+  city: MyString
+  state: MyString
+  category: MyString
+  price: 1.5
+  description: MyText
+  img: 

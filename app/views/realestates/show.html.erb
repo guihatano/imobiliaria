@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Re type:</strong>
+  <%= @realestate.re_type %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @realestate.street %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @realestate.district %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @realestate.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @realestate.state %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @realestate.category %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @realestate.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @realestate.description %>
+</p>
+
+<p>
+  <strong>Img:</strong>
+  <%= @realestate.img %>
+</p>
+
+<%= link_to 'Edit', edit_realestate_path(@realestate) %> |
+<%= link_to 'Back', realestates_path %>
