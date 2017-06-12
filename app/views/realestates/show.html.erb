@@ -19,12 +19,7 @@
 
 <p>
   <strong><%= t('city') %>:</strong>
-  <%= @realestate.city %>
-</p>
-
-<p>
-  <strong><%= t('state') %>:</strong>
-  <%= @realestate.state %>
+  <%= @realestate.city %> - <%= @realestate.state %>
 </p>
 
 <p>
@@ -34,7 +29,7 @@
 
 <p>
   <strong><%= t('price') %>:</strong>
-  <%= @realestate.price %>
+  <%= number_to_currency @realestate.price %>
 </p>
 
 <p>
@@ -42,5 +37,5 @@
   <%= @realestate.description %>
 </p>
 
-<%= link_to t('Edit'), edit_realestate_path(@realestate) %> |
-<%= link_to t('Back'), realestates_path %>
+<%= link_to t('edit'), edit_realestate_path(@realestate) %> |
+<%= link_to t('back'), realestates_path %>

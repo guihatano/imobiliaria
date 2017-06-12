@@ -1,7 +1,7 @@
 <%= form_for(realestate) do |f| %>
   <% if realestate.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%=t pluralize(realestate.errors.count, "error") %> <%=t :error_saving %>:</h2>
+      <h2><%= pluralize(realestate.errors.count, t('error')) %> <%=t :error_saving %>:</h2>
 
       <ul>
       <% realestate.errors.full_messages.each do |message| %>
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= f.label t('category') %>
-    <%= f.text_field :category %>
+    <%= f.select :category, Realestate.category.options %>
   </div>
 
   <div class="field">

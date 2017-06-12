@@ -1,11 +1,12 @@
 pt-BR:
+  add_realestate: "Adicionar Imóvel"
+  back: "Voltar"
+  error_saving: proibiram este imóvel de ser salvo
+  edit: "Editar"
   new: "Novo"
   re_type: "Tipo"
   realestate: "imóvel"
-  error_saving: proibiram este imóvel de ser salvo
-  error: 
-    one: erro
-    other: erros
+  error: erro(s)
   activerecord:
     models:
       realestate: 
@@ -29,3 +30,7 @@ pt-BR:
         apartment: "Apartamento"
         rural: "Rural"
         plot: "Terreno"
+      category:
+        rent: "Aluguel"
+        sale: "Venda"
+        both: "Aluguel e venda"
