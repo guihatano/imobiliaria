@@ -1,15 +1,31 @@
-'pt-BR':
-  realestate: "imóvel"
-  Realestate: "Imóvel"
-  realestates: "Imóveis"
+pt-BR:
+  new: "Novo"
   re_type: "Tipo"
-  street: "Rua"
-  district: "Bairro"
-  city: "Cidade"
-  state: "Estado"
-  category: "Categoria"
-  price: "Preço"
-  description: "Descrição"
-  photo: "Foto"
-  Edit: "Editar"
-  Back: "Voltar"
+  realestate: "imóvel"
+  error_saving: proibiram este imóvel de ser salvo
+  error: 
+    one: erro
+    other: erros
+  activerecord:
+    models:
+      realestate: 
+        one: "Imóvel"
+        other: "Imóveis"
+    attributes:
+      realestate:
+        re_type: "Tipo"
+        street: "Rua"
+        district: "Bairro"
+        city: "Cidade"
+        state: "Estado"
+        category: "Categoria"
+        price: "Preço"
+        description: "Descrição"
+        photo: "Foto"
+  enumerize:
+    realestate:
+      re_type:
+        house: "Casa"
+        apartment: "Apartamento"
+        rural: "Rural"
+        plot: "Terreno"

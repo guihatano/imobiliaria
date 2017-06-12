@@ -6,13 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Imobiliária</a>
+      <%= link_to "Imobiliária", root_path, class: "navbar-brand" %>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -23,10 +24,10 @@
             <a class="nav-link" href="#">Link</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!-- <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> -->
       </div>
     </nav>
 
@@ -36,5 +37,34 @@
 
     <%= yield %>
   </div>
+
+  <footer id="footer" class="footer">
+    <div class="container container-fluid">
+      <div class="row">
+
+        <div class="footer-follow col-md-6">
+          <h4>Follow me</h4>
+          <ul>
+            <li><a href="http://www.facebook.com/guihatano" target="_blank"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/guihatano" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+            <li><a href="https://www.instagram.com/guihatano/" target="_blank"><i class="fa fa-instagram fa-3x"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-menu col-md-6">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="http://br.linkedin.com/in/guihatano" target="_blank">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright 2016-2017 guiHatano Co. All Rights Reserved</p>
+      <p>Code licensed under <a href="https://opensource.org/licenses/mit-license.html" target="_blank">MIT License</a></p>
+    </div>
+  </footer>
   </body>
 </html>

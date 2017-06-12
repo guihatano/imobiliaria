@@ -30,6 +30,8 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
 gem 'devise-i18n'
 gem 'paperclip'
+gem 'font-awesome-sass'
+gem 'enumerize'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

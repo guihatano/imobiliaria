@@ -13,3 +13,90 @@
  *= require_self
  */
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/* FOOTER
+--------------------------------------------------*/
+
+footer {
+	background-color: black;
+	margin-top: 60px;
+	width: 100%;
+	bottom: 0px;
+}
+
+footer h4, footer a {
+	color: #AEAEAE;
+}
+
+footer a:hover {
+	color: #E6E6E6;
+}
+
+footer .container {
+	padding: 10px, 0px;
+	/*text-align: center;*/
+	width: 100%;
+}
+
+footer .container .footer-follow {
+	text-align: center;
+}
+
+footer .container p {
+	margin-top: 10px;
+}
+
+footer .copyright {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+footer .copyright p {
+	text-align: center;
+	margin: 0;
+}
+
+footer .container ul {
+	list-style: none;
+}
+
+.footer-menu {
+	padding-top: 20px;
+}
+
+.footer-menu li {
+	padding-top: 5px;
+	padding-left: 40%
+}
+
+.footer-follow {
+	padding-top: 20px;
+}
+
+.footer-menu ul,
+.footer-follow ul {
+	padding-left: 0px;
+}
+
+.footer-follow ul {
+	padding-top: 15px;
+}
+
+.footer-follow > ul > li {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+@media (max-width: 991px) {
+	.footer-menu {
+		text-align: center;
+	}
+
+	.footer-menu li {
+		padding-left: 0;
+	}
+
+}

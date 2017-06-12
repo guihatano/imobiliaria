@@ -1,42 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h1><%=t :realestates %></h1>
 
-<h1>Realestates</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Re type</th>
-      <th>Street</th>
-      <th>District</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Img</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @realestates.each do |realestate| %>
-      <tr>
-        <td><%= realestate.re_type %></td>
-        <td><%= realestate.street %></td>
-        <td><%= realestate.district %></td>
-        <td><%= realestate.city %></td>
-        <td><%= realestate.state %></td>
-        <td><%= realestate.category %></td>
-        <td><%= realestate.price %></td>
-        <td><%= realestate.description %></td>
-        <td><%= realestate.img %></td>
-        <td><%= link_to 'Show', realestate %></td>
-        <td><%= link_to 'Edit', edit_realestate_path(realestate) %></td>
-        <td><%= link_to 'Destroy', realestate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @realestates.each do |realestate| %>
+    <div class="col-md-4">
+      <%= link_to realestate do %>
+        <%= image_tag realestate.img.url(:medium) %>
+      <% end %>
+      <div>
+        <%= realestate.re_type %> - <%= realestate.category %>
+        <br>
+        <%= realestate.district %> - <%= realestate.city %>
+        <p><%= number_to_currency realestate.price %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <br>
 
