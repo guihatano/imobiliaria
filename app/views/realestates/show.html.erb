@@ -1,49 +1,46 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <%= image_tag @realestate.img %>
+</p>
 
 <p>
-  <strong>Re type:</strong>
+  <strong><%= t('re_type') %>:</strong>
   <%= @realestate.re_type %>
 </p>
 
 <p>
-  <strong>Street:</strong>
+  <strong><%= t('street') %>:</strong>
   <%= @realestate.street %>
 </p>
 
 <p>
-  <strong>District:</strong>
+  <strong><%= t('district') %>:</strong>
   <%= @realestate.district %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong><%= t('city') %>:</strong>
   <%= @realestate.city %>
 </p>
 
 <p>
-  <strong>State:</strong>
+  <strong><%= t('state') %>:</strong>
   <%= @realestate.state %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong><%= t('category') %>:</strong>
   <%= @realestate.category %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= t('price') %>:</strong>
   <%= @realestate.price %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('description') %>:</strong>
   <%= @realestate.description %>
 </p>
 
-<p>
-  <strong>Img:</strong>
-  <%= @realestate.img %>
-</p>
-
-<%= link_to 'Edit', edit_realestate_path(@realestate) %> |
-<%= link_to 'Back', realestates_path %>
+<%= link_to t('Edit'), edit_realestate_path(@realestate) %> |
+<%= link_to t('Back'), realestates_path %>
