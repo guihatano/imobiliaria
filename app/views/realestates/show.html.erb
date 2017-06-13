@@ -2,24 +2,15 @@
   <%= image_tag @realestate.img %>
 </p>
 
+<h3>
+  <strong><i class="fa fa-map-marker"></i></strong>
+  <%= @realestate.street %>, <%= @realestate.district %>,
+  <%= @realestate.city %> - <%= @realestate.state %>
+</h3>
+
 <p>
   <strong><%= t('re_type') %>:</strong>
   <%= @realestate.re_type %>
-</p>
-
-<p>
-  <strong><%= t('street') %>:</strong>
-  <%= @realestate.street %>
-</p>
-
-<p>
-  <strong><%= t('district') %>:</strong>
-  <%= @realestate.district %>
-</p>
-
-<p>
-  <strong><%= t('city') %>:</strong>
-  <%= @realestate.city %> - <%= @realestate.state %>
 </p>
 
 <p>
@@ -37,5 +28,12 @@
   <%= @realestate.description %>
 </p>
 
-<%= link_to t('edit'), edit_realestate_path(@realestate) %> |
-<%= link_to t('back'), realestates_path %>
+<p>
+  <strong><%= t('added') %>:</strong>
+  <%=l @realestate.created_at %>
+</p>
+
+<% if user_signed_in? %>
+  <%= link_to t('edit'), edit_realestate_path(@realestate) %> | 
+  <%= link_to t('remove'), @realestate, method: :delete, data: { confirm: t('confirmation') } %>
+<% end %>

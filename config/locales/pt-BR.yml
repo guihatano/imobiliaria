@@ -1,11 +1,17 @@
 pt-BR:
   add_realestate: "Adicionar Imóvel"
+  added: "Adicionado"
+  added_in: "Adicionado em"
+  address: "Endereço"
   back: "Voltar"
+  confirmation: "Você tem certeza?"
   error_saving: proibiram este imóvel de ser salvo
   edit: "Editar"
   new: "Novo"
   re_type: "Tipo"
   realestate: "imóvel"
+  realestates: "Imóveis"
+  remove: "Apagar"
   error: erro(s)
   activerecord:
     models:

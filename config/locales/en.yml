@@ -1,4 +1,5 @@
 en:
+  confirmation: "Are you sure?"
   error_saving: prohibited this realestate from being saved
   activerecord:
     models:

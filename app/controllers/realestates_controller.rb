@@ -7,6 +7,7 @@ class RealestatesController < ApplicationController
   # GET /realestates.json
   def index
     @realestates = Realestate.all
+    @carousel = Realestate.limit(3).order('id desc')
   end
 
   # GET /realestates/1
