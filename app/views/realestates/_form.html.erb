@@ -12,48 +12,53 @@
   <% end %>
 
   <div class="field">
-    <%= f.label t('re_type') %>
+    <%= f.label Realestate.human_attribute_name(:re_type) %>
     <%= f.select :re_type, Realestate.re_type.options %>
   </div>
 
   <div class="field">
-    <%= f.label t('street') %>
+    <%= f.label Realestate.human_attribute_name(:street) %>
     <%= f.text_field :street %>
   </div>
 
   <div class="field">
-    <%= f.label t('district') %>
+    <%= f.label Realestate.human_attribute_name(:district) %>
     <%= f.text_field :district %>
   </div>
 
   <div class="field">
-    <%= f.label t('city') %>
+    <%= f.label t('city', scope: [:activerecord, :attributes, :realestate]) %>
     <%= f.text_field :city %>
   </div>
 
   <div class="field">
-    <%= f.label t('state') %>
+    <%= f.label Realestate.human_attribute_name(:state) %>
     <%= f.text_field :state %>
   </div>
 
   <div class="field">
-    <%= f.label t('category') %>
+    <%= f.label Realestate.human_attribute_name(:category) %>
     <%= f.select :category, Realestate.category.options %>
   </div>
 
   <div class="field">
-    <%= f.label t('price') %>
+    <%= f.label Realestate.human_attribute_name(:price) %>
     <%= f.text_field :price %>
   </div>
 
   <div class="field">
-    <%= f.label t('description') %>
+    <%= f.label Realestate.human_attribute_name(:description) %>
     <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label t('photo') %>
+    <%= f.label Realestate.human_attribute_name(:photo) %>
     <%= f.file_field :img, accept: 'image/*' %>
+  </div>
+
+  <div class="field">
+    <%= f.label Realestate.human_attribute_name(:photos) %>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
   </div>
 
   <div class="actions">

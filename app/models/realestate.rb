@@ -1,5 +1,8 @@
 class Realestate < ApplicationRecord
 	extend Enumerize
+
+	has_many :pictures, :dependent => :destroy
+	
 	enumerize :re_type, in: [:house, :apartment, :rural, :plot]
 	enumerize :category, in: [:rent, :sale, :both]
 

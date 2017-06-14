@@ -32,6 +32,7 @@ gem 'devise-i18n'
 gem 'paperclip'
 gem 'font-awesome-sass'
 gem 'enumerize'
+gem 'pry-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

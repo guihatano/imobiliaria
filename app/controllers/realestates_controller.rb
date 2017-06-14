@@ -31,6 +31,8 @@ class RealestatesController < ApplicationController
 
     respond_to do |format|
       if @realestate.save
+        picture_params.each { |image| @realestate.pictures.create(image: image) } if picture_params
+
         format.html { redirect_to @realestate, notice: 'Realestate was successfully created.' }
         format.json { render :show, status: :created, location: @realestate }
       else
@@ -45,6 +47,8 @@ class RealestatesController < ApplicationController
   def update
     respond_to do |format|
       if @realestate.update(realestate_params)
+        picture_params.each { |image| @realestate.pictures.create(image: image) } if picture_params
+
         format.html { redirect_to @realestate, notice: 'Realestate was successfully updated.' }
         format.json { render :show, status: :ok, location: @realestate }
       else
@@ -73,5 +77,9 @@ class RealestatesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def realestate_params
       params.require(:realestate).permit(:re_type, :street, :district, :city, :state, :category, :price, :description, :img)
+    end
+
+    def picture_params
+      params.require(:images)
     end
 end

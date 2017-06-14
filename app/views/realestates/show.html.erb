@@ -1,5 +1,7 @@
 <p>
-  <%= image_tag @realestate.img %>
+  <%@realestate.pictures.each do |picture|%>
+    <%= image_tag picture.image.url(:medium) %>
+  <% end %>
 </p>
 
 <h3>
