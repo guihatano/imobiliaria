@@ -13,6 +13,7 @@ pt-BR:
   remove: "Apagar"
   show: "Mostrar"
   error: erro(s)
+  password: "senha"
   activerecord:
     models:
       realestate: 
