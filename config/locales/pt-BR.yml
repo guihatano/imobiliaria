@@ -11,6 +11,7 @@ pt-BR:
   realestate: "imóvel"
   realestates: "Imóveis"
   remove: "Apagar"
+  show: "Mostrar"
   error: erro(s)
   activerecord:
     models:

@@ -1,6 +1,12 @@
 <h1>Editing Realestate</h1>
 
+<p>
+  <%@realestate.pictures.each do |picture|%>
+    <%= image_tag picture.image.url(:thumb) %>
+  <% end %>
+</p>
+
 <%= render 'form', realestate: @realestate %>
 
-<%= link_to t('Show'), @realestate %> |
-<%= link_to t('Back'), realestates_path %>
+<%= link_to t('show'), @realestate %> |
+<%= link_to t('back'), realestates_path %>

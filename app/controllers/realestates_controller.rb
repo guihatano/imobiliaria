@@ -80,6 +80,6 @@ class RealestatesController < ApplicationController
     end
 
     def picture_params
-      params.require(:images)
+      params.fetch(:images, {})
     end
 end
