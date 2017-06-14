@@ -1,6 +1,6 @@
 <p>
   <%@realestate.pictures.each do |picture|%>
-    <%= image_tag picture.image.url(:medium) %>
+    <%= image_tag picture.image.url(:thumb) %>
   <% end %>
 </p>
 
@@ -11,22 +11,22 @@
 </h3>
 
 <p>
-  <strong><%= t('re_type') %>:</strong>
+  <strong><%= Realestate.human_attribute_name(:re_type) %>:</strong>
   <%= @realestate.re_type %>
 </p>
 
 <p>
-  <strong><%= t('category') %>:</strong>
+  <strong><%= Realestate.human_attribute_name(:category) %>:</strong>
   <%= @realestate.category %>
 </p>
 
 <p>
-  <strong><%= t('price') %>:</strong>
+  <strong><%= Realestate.human_attribute_name(:price) %>:</strong>
   <%= number_to_currency @realestate.price %>
 </p>
 
 <p>
-  <strong><%= t('description') %>:</strong>
+  <strong><%= Realestate.human_attribute_name(:description) %>:</strong>
   <%= @realestate.description %>
 </p>
 

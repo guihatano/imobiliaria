@@ -3,7 +3,8 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li class="first-slide active" data-target="#myCarousel" data-slide-to="0"></li>
-    <%= carousel_indicator(@carousel) %>
+    <li class="second-slide" data-target="#myCarousel" data-slide-to="1"></li>
+    <li class="third-slide" data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
     <% @carousel.each do |carousel| %>
@@ -42,7 +43,7 @@
         <%= image_tag realestate.img.url(:medium) %>
       <% end %>
       <div>
-        <%= realestate.re_type %> - <%= realestate.category %>
+        <%= t(realestate.re_type, scope: [:enumerize, :realestate, :re_type]) %> - <%=t realestate.category, scope: [:enumerize, :realestate, :category] %>
         <br>
         <%= realestate.district %> - <%= realestate.city %>
         <p><%= number_to_currency realestate.price %></p>
