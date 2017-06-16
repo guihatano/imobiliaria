@@ -7,17 +7,20 @@
     <li class="third-slide" data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <% @carousel.each do |carousel| %>
-      <% if @carousel.first == carousel %>
+    <% @carousel.each do |re| %>
+      <% if @carousel.first == re %>
         <div class="carousel-item active">
       <% else %>
         <div class="carousel-item">
       <% end %>
-        <%= image_tag carousel.img.url(:medium) %>
+        <% re.pictures.each do |picture| %>
+          <%= image_tag picture.image.url %>
+          <%break%>
+        <% end %>
         <div class="container">
           <div class="carousel-caption d-none d-md-block text-left">
-            <h1><%= carousel.district %>, <%= carousel.city %> - <%= carousel.state %></h1>
-            <p><%= carousel.re_type %> - <%= carousel.category %></p>
+            <h1><%= re.district %>, <%= re.city %> - <%= re.state %></h1>
+            <p><%= re.re_type %> - <%= re.category %></p>
           </div>
         </div>
       </div>
