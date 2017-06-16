@@ -7,7 +7,9 @@ class RealestatesController < ApplicationController
   # GET /realestates.json
   def index
     @realestates = Realestate.all
-    @carousel = Realestate.limit(3).order('id desc')
+    # if realestate doesn't have image, the html.erb code won't work
+    # using .with_images will prevent this
+    @carousel = Realestate.with_images.limit(3).order('id desc')
   end
 
   # GET /realestates/1

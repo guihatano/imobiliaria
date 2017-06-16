@@ -1,5 +1,5 @@
 
-<% if !@carousel.empty? %>
+<% if @carousel.present? %>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li class="first-slide active" data-target="#myCarousel" data-slide-to="0"></li>
@@ -7,22 +7,15 @@
     <li class="third-slide" data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <% @carousel.each do |re| %>
-      <% if @carousel.first == re %>
-        <div class="carousel-item active">
-      <% else %>
-        <div class="carousel-item">
-      <% end %>
-        <% re.pictures.each do |picture| %>
-          <%= image_tag picture.image.url %>
-          <%break%>
-        <% end %>
-        <div class="container">
-          <div class="carousel-caption d-none d-md-block text-left">
-            <h1><%= re.district %>, <%= re.city %> - <%= re.state %></h1>
-            <p><%= re.re_type %> - <%= re.category %></p>
+    <% @carousel.each_with_index do |re, index| %>
+        <div class="carousel-item <%= index == 0 ? 'active' : ''%>">
+        <%= link_to (image_tag re.pictures.first.image.url), re %>
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-left">
+              <h1><%= "#{re.district}, #{re.city} - #{re.state}" %></h1>
+              <p><%= "#{t(re.re_type, scope: [:enumerize, :realestate, :re_type])} - #{t(re.category, scope: [:enumerize, :realestate, :category] )}" %></p>
+            </div>
           </div>
-        </div>
       </div>
     <% end %>
   </div>
@@ -48,7 +41,7 @@
       <div>
         <%= t(realestate.re_type, scope: [:enumerize, :realestate, :re_type]) %> - <%=t realestate.category, scope: [:enumerize, :realestate, :category] %>
         <br>
-        <%= realestate.district %> - <%= realestate.city %>
+        <%= "#{realestate.district} - #{realestate.city}" %>
         <p><%= number_to_currency realestate.price %></p>
       </div>
     </div>

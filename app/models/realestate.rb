@@ -11,4 +11,7 @@ class Realestate < ApplicationRecord
 
   validates :re_type, :street, :district, :city, :state, :category, :price, presence: true
   validates :price, numericality: { greater_than: 0 }
+
+  # ensures the realestate has images
+  scope :with_images, -> {left_outer_joins(:pictures).where('pictures.realestate_id IS NOT NULL').distinct}
 end

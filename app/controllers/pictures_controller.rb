@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
 
 		@picture.destroy
     respond_to do |format|
-      format.html { redirect_to @realestate, notice: 'Picture was successfully deleted.' }
+      format.html { redirect_to edit_realestate_path(@realestate), notice: 'Picture was successfully deleted.' }
       format.json { render :edit, status: :ok, location: @realestate }
     end
 	end
