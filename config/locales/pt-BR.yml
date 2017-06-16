@@ -11,7 +11,7 @@ pt-BR:
   realestate: "imóvel"
   realestates: "Imóveis"
   remove: "Apagar"
-  show: "Mostrar"
+  show: "Visualizar"
   error: erro(s)
   password: "senha"
   activerecord:

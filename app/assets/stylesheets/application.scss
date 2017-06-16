@@ -136,6 +136,10 @@ footer .container ul {
 
 }
 
+
+/* Login
+---------------------------------*/
+
 .form-signin-heading {
   max-width: 330px;
   padding-left: 15px;
@@ -180,4 +184,29 @@ footer .container ul {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+/* -------------------*/
+
+.pictures {
+  display: inline-block;
+  text-align: center;
+}
+
+.pictures img {
+  display: block;
+}
+
+.pictures a i {
+  color: #1a1a1a;
+}
+
+.form {
+  width: 50%;
+}
+
+@media (max-width: 700px) {
+  .form {
+    width: 100%;
+  }
 }
