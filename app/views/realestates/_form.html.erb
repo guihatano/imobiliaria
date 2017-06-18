@@ -11,54 +11,69 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <% if !@realestate.pictures.empty? %>
+  <p>
+    <%@realestate.pictures.each do |picture|%>
+      <div class="pictures">
+      <%= f.fields_for :pictures, picture do |image_fields| %>
+        <%= image_tag picture.image.url(:thumb) %>
+      <% end %>
+      <%= link_to destroy_realestate_picture_path(@realestate, picture), method: :delete, data: { confirm: t('confirmation')} do %>
+        <i class="fa fa-trash-o"></i>
+      <% end %>
+      </div>
+    <% end %>
+  </p>
+  <% end -%>
+
+<div class="form">
+  <div class="field form-group">
     <%= f.label Realestate.human_attribute_name(:re_type) %>
-    <%= f.select :re_type, Realestate.re_type.options %>
+    <%= f.select :re_type, Realestate.re_type.options, {}, class: 'custom-select form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label Realestate.human_attribute_name(:street) %>
-    <%= f.text_field :street %>
+  <div class="field form-group">
+    <%= f.text_field :street, class: 'form-control', placeholder: Realestate.human_attribute_name(:street) %>
   </div>
 
-  <div class="field">
-    <%= f.label Realestate.human_attribute_name(:district) %>
-    <%= f.text_field :district %>
+  <div class="field form-group">
+    <%= f.text_field :district, class: 'form-control', placeholder: Realestate.human_attribute_name(:district) %>
   </div>
 
-  <div class="field">
-    <%= f.label Realestate.human_attribute_name(:city) %>
-    <%= f.text_field :city %>
-    <%= f.label Realestate.human_attribute_name(:state) %>
-    <%= f.text_field :state %>
+  <div class="field form-group row">
+    <div class="col-sm-6">
+      <%= f.text_field :city, class: 'form-control', placeholder: Realestate.human_attribute_name(:city) %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.text_field :state, class: 'form-control', placeholder: Realestate.human_attribute_name(:state) %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label Realestate.human_attribute_name(:category) %>
-    <%= f.select :category, Realestate.category.options %>
+    <%= f.select :category, Realestate.category.options, {}, class: 'custom-select form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label Realestate.human_attribute_name(:price) %>
-    <%= f.text_field :price %>
+  <div class="field form-group">
+    <%= f.text_field :price, class: 'form-control', placeholder: Realestate.human_attribute_name(:price) %>
   </div>
 
-  <div class="field">
-    <%= f.label Realestate.human_attribute_name(:description) %>
-    <%= f.text_area :description %>
+  <div class="field form-group">
+    <%= f.text_area :description, class: 'form-control', placeholder: Realestate.human_attribute_name(:description) %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label Realestate.human_attribute_name(:photo) %>
-    <%= f.file_field :img, accept: 'image/*' %>
+    <%= f.file_field :img, accept: 'image/*', class: 'form-control-file' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label Realestate.human_attribute_name(:photo) %>
-    <%= file_field_tag "images[]", accept: 'image/*', multiple: true %>
+    <%= file_field_tag "images[]", accept: 'image/*', multiple: true, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
+</div>
 <% end %>
