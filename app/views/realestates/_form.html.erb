@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <% if !@realestate.pictures.empty? %>
+  <% if @realestate.pictures.present? %>
   <p>
     <%@realestate.pictures.each do |picture|%>
       <div class="pictures">
