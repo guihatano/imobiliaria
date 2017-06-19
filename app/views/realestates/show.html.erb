@@ -12,12 +12,12 @@
 
 <p>
   <strong><%= Realestate.human_attribute_name(:re_type) %>:</strong>
-  <%= @realestate.re_type %>
+  <%=t @realestate.re_type, scope: [:enumerize, :realestate, :re_type] %>
 </p>
 
 <p>
   <strong><%= Realestate.human_attribute_name(:category) %>:</strong>
-  <%= @realestate.category %>
+  <%=t @realestate.category, scope: [:enumerize, :realestate, :category] %>
 </p>
 
 <p>
@@ -52,17 +52,28 @@
                 status);
           }
         });
-        // var uluru = {lat: -25.363, lng: 131.044};
-        // var marker = new google.maps.Marker({
-          // position: uluru,
-          // map: map
-        // });
       }
 </script>
 
 <div style='width: 100%;'>
   <div id="map" style='width: 100%; height: 400px;'></div>
 </div>
+
+<div class="social-share-links">
+  <h5><i class="fa fa-share-alt"></i> Compartilhar</h5>
+  <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://www.facebook.com/sharer/sharer.php?u=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
+    <i class="fa fa-2x fa-facebook-square share-link"></i>
+  <% end %>
+  <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://twitter.com/home?status=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
+    <i class="fa fa-2x fa-twitter-square share-link"></i>
+  <% end %>
+  <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://plus.google.com/share?url=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
+    <i class="fa fa-2x fa-google-plus-square share-link"></i>
+  <% end %>
+</div>
+
+
+
 
 <% if user_signed_in? %>
   <%= link_to t('edit'), edit_realestate_path(@realestate) %> | 
