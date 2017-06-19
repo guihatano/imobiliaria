@@ -36,7 +36,13 @@
   <% @realestates.each do |realestate| %>
     <div class="col-md-4">
       <%= link_to realestate do %>
-        <%= image_tag realestate.img.url(:medium) %>
+        <% if realestate.cover.present? %>
+          <%= image_tag realestate.pictures.find(realestate.cover).image.url(:thumb) %>
+        <% elsif realestate.pictures.present? %>
+          <%= image_tag realestate.pictures.first.image.url(:thumb) %>
+        <% else %>
+          <%= image_tag realestate.img.url(:medium) %>
+        <% end %>
       <% end %>
       <div>
         <%= t(realestate.re_type, scope: [:enumerize, :realestate, :re_type]) %> - <%=t realestate.category, scope: [:enumerize, :realestate, :category] %>

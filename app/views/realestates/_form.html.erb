@@ -15,16 +15,17 @@
   <p>
     <%@realestate.pictures.each do |picture|%>
       <div class="pictures">
-      <%= f.fields_for :pictures, picture do |image_fields| %>
-        <%= image_tag picture.image.url(:thumb) %>
-      <% end %>
-      <%= link_to destroy_realestate_picture_path(@realestate, picture), method: :delete, data: { confirm: t('confirmation')} do %>
-        <i class="fa fa-trash-o"></i>
-      <% end %>
+        <%= f.fields_for :pictures, picture do |image_fields| %>
+          <%= image_tag picture.image.url(:thumb) %>
+        <% end %>
+        <%= link_to destroy_realestate_picture_path(@realestate, picture), method: :delete, data: { confirm: t('confirmation')} do %>
+          <i class="fa fa-trash-o"></i>
+        <% end %>
+        <%= f.radio_button :cover, picture.id %>
       </div>
     <% end %>
   </p>
-  <% end -%>
+  <% end %>
 
 <div class="form">
   <div class="field form-group">
