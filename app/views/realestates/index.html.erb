@@ -30,7 +30,7 @@
 </div>
 <% end %>
 
-<h1><%=t :realestates %></h1>
+<h1><%= realestates_title(params) %></h1>
 
 <div class="row">
   <% @realestates.each do |realestate| %>
@@ -53,6 +53,8 @@
     </div>
   <% end %>
 </div>
+
+<%= will_paginate @realestates, class: 'r_pagination' %>
 
 <br>
 

@@ -6,10 +6,16 @@ class RealestatesController < ApplicationController
   # GET /realestates
   # GET /realestates.json
   def index
-    @realestates = Realestate.all
-    # if realestate doesn't have image, the html.erb code won't work
-    # using .with_images will prevent this
-    @carousel = Realestate.with_images.limit(3).order('id desc')
+    if params[:category]
+      @realestates = Realestate.where(category: params[:category])
+    elsif params[:type]
+      @realestates = Realestate.where(re_type: params[:type])
+    else
+      @realestates = Realestate.all.paginate(:page => params[:page], :per_page => 9)
+      # if realestate doesn't have image, the html.erb code won't work
+      # using .with_images will prevent this
+      @carousel = Realestate.with_images.limit(3).order('id desc')
+    end
   end
 
   # GET /realestates/1
