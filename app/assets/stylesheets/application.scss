@@ -66,6 +66,27 @@ img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
+/* Image not found 
+-------------------------*/
+
+.not-found-image {
+  text-align: center;
+  height: 100px;
+  width: 150px;
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+}
+
+.not-found-image:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.not-found-image i {
+  position: relative;
+  top: 25%;
+  color: #1a1a1a;
+}
 
 /* FOOTER
 --------------------------------------------------*/
@@ -87,7 +108,6 @@ footer a:hover {
 
 footer .container {
 	padding: 10px, 0px;
-	/*text-align: center;*/
 	width: 100%;
 }
 
@@ -204,16 +224,25 @@ footer .container ul {
 
 /* -------------------*/
 
-.pictures {
+
+.picture-card {
   display: inline-block;
   text-align: center;
+  position: relative;
 }
 
-.pictures img {
+.picture-card input {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.picture-options {
+  position: relative;
   display: block;
 }
 
-.pictures a i {
+.picture-card a i {
   color: #1a1a1a;
 }
 

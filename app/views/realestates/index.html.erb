@@ -41,7 +41,7 @@
         <% elsif realestate.pictures.present? %>
           <%= image_tag realestate.pictures.first.image.url(:thumb) %>
         <% else %>
-          <%= image_tag realestate.img.url(:medium) %>
+          <div class="not-found-image"><i class="fa fa-camera fa-2x"></i></div>
         <% end %>
       <% end %>
       <div>

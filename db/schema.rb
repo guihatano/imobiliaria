@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619202247) do
+ActiveRecord::Schema.define(version: 20170621144829) do
 
   create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "description"
@@ -30,14 +30,10 @@ ActiveRecord::Schema.define(version: 20170619202247) do
     t.string   "city"
     t.string   "state"
     t.string   "category"
-    t.float    "price",            limit: 24
-    t.text     "description",      limit: 65535
-    t.string   "img_file_name"
-    t.string   "img_content_type"
-    t.integer  "img_file_size"
-    t.datetime "img_updated_at"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.float    "price",       limit: 24
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "cover"
   end
 

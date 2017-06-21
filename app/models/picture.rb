@@ -5,5 +5,5 @@ class Picture < ApplicationRecord
 		styles: { medium: "x300>", thumb: "x100>" },
 		default_url: "/images/:style/missing.png"
 
-  do_not_validate_attachment_file_type :image
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
