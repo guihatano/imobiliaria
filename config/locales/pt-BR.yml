@@ -44,6 +44,6 @@ pt-BR:
         sale: "Venda"
         both: "Aluguel e venda"
   will_paginate:
-    previous_label: "&#8592; Anterior"
-    next_label: "Próximo &#8594;"
+    previous_label: "Anterior"
+    next_label: "Próximo"
     page_gap: "&hellip;"

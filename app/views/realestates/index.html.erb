@@ -54,7 +54,7 @@
   <% end %>
 </div>
 
-<%= will_paginate @realestates, class: 'r_pagination' %>
+<%= will_paginate @realestates, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>
 
 <br>
 

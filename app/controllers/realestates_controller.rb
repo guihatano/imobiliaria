@@ -7,9 +7,9 @@ class RealestatesController < ApplicationController
   # GET /realestates.json
   def index
     if params[:category]
-      @realestates = Realestate.where(category: params[:category])
+      @realestates = Realestate.where(category: params[:category]).paginate(:page => params[:page], :per_page => 9)
     elsif params[:type]
-      @realestates = Realestate.where(re_type: params[:type])
+      @realestates = Realestate.where(re_type: params[:type]).paginate(:page => params[:page], :per_page => 9)
     else
       @realestates = Realestate.all.paginate(:page => params[:page], :per_page => 9)
       # if realestate doesn't have image, the html.erb code won't work
