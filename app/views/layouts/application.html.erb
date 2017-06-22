@@ -41,10 +41,10 @@
             </li>
           <% end %>
         </ul>
-        <!-- <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
+        <%= form_tag(realestates_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control mr-sm-2" %>
+          <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
             <% if user_signed_in? %>

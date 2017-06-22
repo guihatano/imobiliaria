@@ -16,6 +16,10 @@ class RealestatesController < ApplicationController
       # using .with_images will prevent this
       @carousel = Realestate.with_images.limit(3).order('id desc')
     end
+
+    if params[:search]
+      @realestates = Realestate.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 9)
+    end
   end
 
   # GET /realestates/1
