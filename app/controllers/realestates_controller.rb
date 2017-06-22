@@ -1,7 +1,7 @@
 class RealestatesController < ApplicationController
   before_action :set_realestate, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :admin]
 
   # GET /realestates
   # GET /realestates.json
@@ -78,6 +78,10 @@ class RealestatesController < ApplicationController
       format.html { redirect_to realestates_url, notice: 'Realestate was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def admin
+    @realestates = Realestate.all.paginate(:page => params[:page], :per_page => 9)
   end
 
   private

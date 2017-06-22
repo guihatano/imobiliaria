@@ -55,9 +55,3 @@
 </div>
 
 <%= will_paginate @realestates, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>
-
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to t('add_realestate'), new_realestate_path %>
-<% end -%>

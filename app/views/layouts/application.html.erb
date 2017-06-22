@@ -35,11 +35,6 @@
               <% end %>
             </div>
           </li>
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to t('add_realestate'), new_realestate_path, class: "nav-link" %>
-            </li>
-          <% end %>
         </ul>
         <%= form_tag(realestates_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control mr-sm-2" %>

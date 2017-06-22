@@ -18,4 +18,8 @@ class Realestate < ApplicationRecord
 	  	.or(where("city LIKE ?", "%#{search}%"))
 	  	.or(where("state LIKE ?", "%#{search}%"))
 	end
+
+	def address
+		"#{street}, #{district}, #{city} - #{state}"
+	end
 end

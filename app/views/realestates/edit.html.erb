@@ -1,7 +1,6 @@
-<h1>Editing Realestate</h1>
-
+<h1><%= t('editing_realestate') %></h1>
 
 <%= render 'form', realestate: @realestate %>
 
-<%= link_to t('show'), @realestate %> |
-<%= link_to t('back'), realestates_path %>
+<%= link_to t('show'), @realestate, class: "btn btn-secondary" %>
+<%= link_to t('back'), :back, class: "btn btn-secondary" %>
