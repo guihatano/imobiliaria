@@ -1,4 +1,4 @@
-<%= form_for(realestate) do |f| %>
+<%= form_for realestate, html: { multipart: true } do |f| %>
   <% if realestate.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(realestate.errors.count, t('error')) %> <%=t :error_saving %>:</h2>
@@ -12,19 +12,22 @@
   <% end %>
 
   <% if @realestate.pictures.present? %>
-  <p>
     <%@realestate.pictures.each do |picture|%>
-      <div class="pictures">
-      <%= f.fields_for :pictures, picture do |image_fields| %>
-        <%= image_tag picture.image.url(:thumb) %>
-      <% end %>
-      <%= link_to destroy_realestate_picture_path(@realestate, picture), method: :delete, data: { confirm: t('confirmation')} do %>
-        <i class="fa fa-trash-o"></i>
-      <% end %>
+      <div class="picture-card">
+        <%= f.radio_button :cover, picture.id %>
+        <%= f.fields_for :pictures, picture do |image_fields| %>
+          <%= f.label :cover, :value => picture.id do %>
+            <%= image_tag picture.image.url(:thumb) %>
+          <% end %>
+        <% end %>
+        <div class="picture-options">
+          <%= link_to destroy_realestate_picture_path(@realestate, picture), method: :delete, data: { confirm: t('confirmation')} do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+        </div>
       </div>
     <% end %>
-  </p>
-  <% end -%>
+  <% end %>
 
 <div class="form">
   <div class="field form-group">
@@ -60,11 +63,6 @@
 
   <div class="field form-group">
     <%= f.text_area :description, class: 'form-control', placeholder: Realestate.human_attribute_name(:description) %>
-  </div>
-
-  <div class="field form-group">
-    <%= f.label Realestate.human_attribute_name(:photo) %>
-    <%= f.file_field :img, accept: 'image/*', class: 'form-control-file' %>
   </div>
 
   <div class="field form-group">

@@ -7,11 +7,13 @@ pt-BR:
   confirmation: "Você tem certeza?"
   error_saving: proibiram este imóvel de ser salvo
   edit: "Editar"
+  for_sale: "à venda"
   new: "Novo"
   realestate: "imóvel"
   realestates: "Imóveis"
   remove: "Apagar"
   show: "Visualizar"
+  to_rent: "para alugar"
   error: erro(s)
   password: "senha"
   activerecord:
@@ -35,9 +37,13 @@ pt-BR:
       re_type:
         house: "Casa"
         apartment: "Apartamento"
-        rural: "Rural"
+        rural: "Área Rural"
         plot: "Terreno"
       category:
         rent: "Aluguel"
         sale: "Venda"
         both: "Aluguel e venda"
+  will_paginate:
+    previous_label: "Anterior"
+    next_label: "Próximo"
+    page_gap: "&hellip;"

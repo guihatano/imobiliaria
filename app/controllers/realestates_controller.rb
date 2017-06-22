@@ -6,10 +6,16 @@ class RealestatesController < ApplicationController
   # GET /realestates
   # GET /realestates.json
   def index
-    @realestates = Realestate.all
-    # if realestate doesn't have image, the html.erb code won't work
-    # using .with_images will prevent this
-    @carousel = Realestate.with_images.limit(3).order('id desc')
+    if params[:category]
+      @realestates = Realestate.where(category: params[:category]).paginate(:page => params[:page], :per_page => 9)
+    elsif params[:type]
+      @realestates = Realestate.where(re_type: params[:type]).paginate(:page => params[:page], :per_page => 9)
+    else
+      @realestates = Realestate.all.paginate(:page => params[:page], :per_page => 9)
+      # if realestate doesn't have image, the html.erb code won't work
+      # using .with_images will prevent this
+      @carousel = Realestate.with_images.limit(3).order('id desc')
+    end
   end
 
   # GET /realestates/1
@@ -78,7 +84,7 @@ class RealestatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def realestate_params
-      params.require(:realestate).permit(:re_type, :street, :district, :city, :state, :category, :price, :description, :img)
+      params.require(:realestate).permit(:re_type, :street, :district, :city, :state, :category, :price, :description, :cover)
     end
 
     def picture_params
