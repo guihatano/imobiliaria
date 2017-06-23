@@ -15,7 +15,7 @@
         <ul>
           <li><%= link_to "Home", root_path %></li>
           <li><a href="#">About</a></li>
-          <li><a href="http://br.linkedin.com/in/guihatano" target="_blank">Contact</a></li>
+          <li><%= link_to t('contact'), contact_path %></li>
           <li>
             <%= link_to admin_path do %>
               <i class="fa fa-lock"></i> <%= t('restricted_area') %>

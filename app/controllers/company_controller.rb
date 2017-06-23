@@ -1,10 +1,12 @@
 class CompanyController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :show]
-	before_action :set_company, only: [:edit, :update, :destroy]
+	before_action :set_company, only: [:edit, :update, :destroy, :show]
+
+	def index
+		@companies = Company.all
+	end
 
 	def show
-		# This application is for one company only
-		@company = Company.find(1)
 	end
 
 	def new

@@ -6,10 +6,12 @@ pt-BR:
   back: "Voltar"
   company: "Imobiliária"
   confirmation: "Você tem certeza?"
+  contact: "Contato"
   error_saving: "proibiram este imóvel de ser salvo"
   error_new_company: "Apenas uma imobiliária pode ser cadastrada. Contate o administrador em caso de dúvidas."
   edit: "Editar"
   for_sale: "à venda"
+  name: "Nome"
   new: "Novo"
   new_female: "Nova"
   realestate: "imóvel"
@@ -22,6 +24,7 @@ pt-BR:
   to_rent: "para alugar"
   error: erro(s)
   password: "senha"
+  wrote: "escreveu"
   activerecord:
     models:
       realestate: 
@@ -30,6 +33,7 @@ pt-BR:
       company:
         one: "Imobiliária"
         other: "Imobiliárias"
+      message: "Mensagem"
     attributes:
       realestate:
         re_type: "Tipo"
@@ -56,6 +60,11 @@ pt-BR:
         twitter: "Twitter"
         instagram: "Instagram"
         google_plus: "Google Plus"
+      message:
+        name: "Nome"
+        email: "Email"
+        phone: "Telefone"
+        content: "Mensagem"
   enumerize:
     realestate:
       re_type:

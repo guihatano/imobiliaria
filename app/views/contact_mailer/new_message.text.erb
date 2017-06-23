@@ -1,0 +1,8 @@
+
+<%= "#{@message.name} <#{@message.email}> wrote:" %>
+
+<% if @message.phone.present? %>
+  <%= "#{Message.human_attribute_name(:phone)}: #{@message.phone}" %>
+<% end %>
+
+<%= @message.content %>

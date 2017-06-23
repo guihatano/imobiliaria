@@ -1,0 +1,11 @@
+<% if @companies.present? %>
+	<% @companies.each do |company| %>
+		<div class="card">
+		  <div class="card-block">
+		    <h4 class="card-title"><%= company.name %></h4>
+		    <p class="card-text"><%= company.address %></p>
+		    <%= link_to t('show'), company, class: "btn btn-primary" %>
+		  </div>
+		</div>
+	<% end %>
+<% end %>
