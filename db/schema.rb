@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621144829) do
+ActiveRecord::Schema.define(version: 20170622190616) do
+
+  create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "cellphone"
+    t.string   "creci"
+    t.string   "email"
+    t.string   "street"
+    t.integer  "st_number"
+    t.string   "district"
+    t.string   "city"
+    t.string   "state"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "google_plus"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "description"

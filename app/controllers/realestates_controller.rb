@@ -82,6 +82,7 @@ class RealestatesController < ApplicationController
 
   def admin
     @realestates = Realestate.all.paginate(:page => params[:page], :per_page => 9)
+    @company = Company.all.present?
   end
 
   private

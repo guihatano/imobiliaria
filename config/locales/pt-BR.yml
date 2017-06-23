@@ -4,16 +4,21 @@ pt-BR:
   added_in: "Adicionado em"
   address: "Endereço"
   back: "Voltar"
+  company: "Imobiliária"
   confirmation: "Você tem certeza?"
-  error_saving: proibiram este imóvel de ser salvo
+  error_saving: "proibiram este imóvel de ser salvo"
+  error_new_company: "Apenas uma imobiliária pode ser cadastrada. Contate o administrador em caso de dúvidas."
   edit: "Editar"
   for_sale: "à venda"
   new: "Novo"
+  new_female: "Nova"
   realestate: "imóvel"
   realestates: "Imóveis"
   remove: "Apagar"
   restricted_area: "Área Restrita"
   show: "Visualizar"
+  social_networks: "Redes Sociais"
+  to_config: "Configurar"
   to_rent: "para alugar"
   error: erro(s)
   password: "senha"
@@ -22,6 +27,9 @@ pt-BR:
       realestate: 
         one: "Imóvel"
         other: "Imóveis"
+      company:
+        one: "Imobiliária"
+        other: "Imobiliárias"
     attributes:
       realestate:
         re_type: "Tipo"
@@ -33,6 +41,21 @@ pt-BR:
         price: "Preço"
         description: "Descrição"
         photo: "Foto"
+      company:
+        name: "Nome"
+        phone: "Telefone"
+        cellphone: "Celular"
+        creci: "CRECI"
+        email: "Email"
+        street: "Rua"
+        st_number: "Número"
+        district: "Bairro"
+        city: "Cidade"
+        state: "Estado"
+        facebook: "Facebook"
+        twitter: "Twitter"
+        instagram: "Instagram"
+        google_plus: "Google Plus"
   enumerize:
     realestate:
       re_type:
@@ -40,6 +63,7 @@ pt-BR:
         apartment: "Apartamento"
         rural: "Área Rural"
         plot: "Terreno"
+        shed: "Galpão"
       category:
         rent: "Aluguel"
         sale: "Venda"

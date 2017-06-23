@@ -1,0 +1,76 @@
+<%= form_for company, html: { multipart: true } do |f| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(company.errors.count, t('error')) %> <%=t :error_saving %>:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form">
+  <div class="field form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: Company.human_attribute_name(:name) %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.text_field :creci, class: 'form-control', placeholder: Company.human_attribute_name(:creci) %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.text_field :street, class: 'form-control', placeholder: Company.human_attribute_name(:street) %>
+  </div>
+
+  <div class="field form-group row">
+    <div class="col-sm-3">
+      <%= f.text_field :st_number, class: 'form-control', placeholder: Company.human_attribute_name(:st_number) %>
+    </div>
+    <div class="col-sm-9">
+      <%= f.text_field :district, class: 'form-control', placeholder: Company.human_attribute_name(:district) %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <div class="col-sm-8">
+      <%= f.text_field :city, class: 'form-control', placeholder: Company.human_attribute_name(:city) %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.text_field :state, class: 'form-control', placeholder: Company.human_attribute_name(:state) %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.text_field :email, class: 'form-control', placeholder: Company.human_attribute_name(:email) %>
+  </div>
+
+  <div class="field form-group row">
+    <div class="col-sm-6">
+      <%= f.text_field :phone, class: 'form-control', placeholder: Company.human_attribute_name(:phone) %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.text_field :cellphone, class: 'form-control', placeholder: Company.human_attribute_name(:cellphone) %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label t('social_networks') %>
+    <%= f.text_field :facebook, class: 'form-control', placeholder: Company.human_attribute_name(:facebook) %>
+  </div>
+  <div class="field form-group">
+    <%= f.text_field :twitter, class: 'form-control', placeholder: Company.human_attribute_name(:twitter) %>
+  </div>
+  <div class="field form-group">
+    <%= f.text_field :instagram, class: 'form-control', placeholder: Company.human_attribute_name(:instagram) %>
+  </div>
+  <div class="field form-group">
+    <%= f.text_field :google_plus, class: 'form-control', placeholder: Company.human_attribute_name(:google_plus) %>
+  </div>
+
+  <div class="actions form-group">
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
+</div>
+<% end %>

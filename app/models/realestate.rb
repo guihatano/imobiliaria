@@ -3,7 +3,7 @@ class Realestate < ApplicationRecord
 
 	has_many :pictures, :dependent => :destroy
 	
-	enumerize :re_type, in: [:house, :apartment, :rural, :plot]
+	enumerize :re_type, in: [:house, :apartment, :rural, :plot, :shed]
 	enumerize :category, in: [:rent, :sale, :both]
 
   validates :re_type, :street, :district, :city, :state, :category, :price, presence: true

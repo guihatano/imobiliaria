@@ -1,7 +1,10 @@
 <h1><%= t('admin_area') %></h1>
 
 <% if user_signed_in? %>
-  <%= link_to t('add_realestate'), new_realestate_path %>
+  <%= link_to t('add_realestate'), new_realestate_path, class: "btn btn-primary btn-sm" %>
+<% end %>
+<% unless @company %>
+  <%= link_to t('to_config') + " " + t('company'), new_company_path, class: "btn btn-warning btn-sm" %>
 <% end %>
 
 <table class="table">
