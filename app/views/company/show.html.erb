@@ -1,0 +1,58 @@
+<h1><%= @company.name %></h1>
+
+<p>
+  <%= @company.email %>
+</p>
+
+<h3>
+  <strong><i class="fa fa-map-marker"></i></strong>
+  <%= "#{@company.street}, #{@company.district}, #{@company.city} - #{@company.state}" %>
+</h3>
+
+<script>
+      function initMap() {
+        var uluru = '<%= "#{@company.street}, #{@company.district}, #{@company.city}, #{@company.state}" %>'
+        var map = new google.maps.Map(document.getElementById('map'), { zoom: 16 });
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'address': uluru}, function(results, status) {
+          if (status === 'OK') {
+            map.setCenter(results[0].geometry.location);
+            new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+          } else {
+            window.alert('Geocode was not successful for the following reason: ' +
+                status);
+          }
+        });
+      }
+</script>
+
+<div style='width: 100%;'>
+  <div id="map" style='width: 100%; height: 400px;'></div>
+</div>
+
+<div class="social-share-links">
+  <h5><i class="fa fa-share-alt"></i> Compartilhar</h5>
+  <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://www.facebook.com/sharer/sharer.php?u=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
+    <i class="fa fa-2x fa-facebook-square share-link"></i>
+  <% end %>
+  <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://twitter.com/home?status=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
+    <i class="fa fa-2x fa-twitter-square share-link"></i>
+  <% end %>
+  <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://plus.google.com/share?url=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
+    <i class="fa fa-2x fa-google-plus-square share-link"></i>
+  <% end %>
+</div>
+
+
+
+
+<% if user_signed_in? %>
+  <%= link_to t('edit'), edit_company_path(@company) %>
+<% end %>
+
+<% content_for :javascript do %>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlyvKxnErCee57UucS2NZQLhTmDuuoCN0&callback=initMap"></script>
+<% end %>

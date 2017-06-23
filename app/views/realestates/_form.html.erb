@@ -66,12 +66,12 @@
   </div>
 
   <div class="field form-group">
-    <%= f.label Realestate.human_attribute_name(:photo) %>
+    <%= f.label Realestate.human_attribute_name(:photo) + "(s)" %>
     <%= file_field_tag "images[]", accept: 'image/*', multiple: true, class: 'form-control' %>
   </div>
 
   <div class="actions form-group">
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.submit class: 'btn btn-success' %>
   </div>
 </div>
 <% end %>

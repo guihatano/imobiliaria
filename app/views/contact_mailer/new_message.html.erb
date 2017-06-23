@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p><%= "#{@message.name} <#{@message.email}> #{t('wrote')}:" %></p>
+    <% if @message.phone.present? %>
+      <p><%= "#{t('phone', scope: [:activerecord, :attributes, :message])}: #{@message.phone}" %> </p>
+    <% end %>
+
+    <div><%= @message.content %></div>
+  </body>
+</html>

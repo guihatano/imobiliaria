@@ -1,7 +1,7 @@
 class RealestatesController < ApplicationController
   before_action :set_realestate, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :admin]
 
   # GET /realestates
   # GET /realestates.json
@@ -15,6 +15,10 @@ class RealestatesController < ApplicationController
       # if realestate doesn't have image, the html.erb code won't work
       # using .with_images will prevent this
       @carousel = Realestate.with_images.limit(3).order('id desc')
+    end
+
+    if params[:search]
+      @realestates = Realestate.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 9)
     end
   end
 
@@ -74,6 +78,11 @@ class RealestatesController < ApplicationController
       format.html { redirect_to realestates_url, notice: 'Realestate was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def admin
+    @realestates = Realestate.all.paginate(:page => params[:page], :per_page => 9)
+    @company = Company.all.present?
   end
 
   private
