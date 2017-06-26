@@ -1,9 +1,7 @@
 class MessagesController < ApplicationController
+  before_action :set_company, only: [:new, :create]
 
   def new
-    if Company.all.present?
-      @company = Company.all.first
-    end
     @message = Message.new
   end
 
@@ -12,17 +10,21 @@ class MessagesController < ApplicationController
     
     if @message.valid?
       ContactMailer.new_message(@message).deliver
-      redirect_to contact_path, notice: "Your messages has been sent."
+      redirect_to contact_path, notice: t(:message_sent)
     else
-      flash[:alert] = "An error occurred while delivering this message."
       render :new
     end
   end
 
-private
+  private
 
-  def message_params
-    params.require(:message).permit(:name, :email, :phone, :content)
-  end
+    def set_company
+      if Company.all.present?
+        @company = Company.all.first
+      end
+    end
 
+    def message_params
+      params.require(:message).permit(:name, :email, :phone, :content)
+    end
 end

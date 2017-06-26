@@ -11,6 +11,8 @@ pt-BR:
   error_new_company: "Apenas uma imobiliária pode ser cadastrada. Contate o administrador em caso de dúvidas."
   edit: "Editar"
   for_sale: "à venda"
+  is_not_an_email: "Não é um email"
+  message_sent: "Sua mensagem foi enviada."
   name: "Nome"
   new: "Novo"
   new_female: "Nova"
@@ -18,6 +20,7 @@ pt-BR:
   realestates: "Imóveis"
   remove: "Apagar"
   restricted_area: "Área Restrita"
+  send: "Enviar"
   show: "Visualizar"
   social_networks: "Redes Sociais"
   to_config: "Configurar"
@@ -77,6 +80,13 @@ pt-BR:
         rent: "Aluguel"
         sale: "Venda"
         both: "Aluguel e venda"
+  helpers:
+    placeholder:
+      message:
+        name: "Nome"
+        email: "Email"
+        phone: "Telefone"
+        content: "Mensagem"
   will_paginate:
     previous_label: "Anterior"
     next_label: "Próximo"

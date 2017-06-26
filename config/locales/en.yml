@@ -1,6 +1,7 @@
 en:
   confirmation: "Are you sure?"
   error_saving: prohibited this realestate from being saved
+  message_sent: "Your message has been sent."
   activerecord:
     models:
       realestate:

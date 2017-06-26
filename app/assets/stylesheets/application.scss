@@ -16,9 +16,18 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.alert {
+  margin-top: 1rem;
+}
+
+.title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 /* Carousel base class */
 .carousel {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
