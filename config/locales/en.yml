@@ -1,7 +1,14 @@
 en:
   confirmation: "Are you sure?"
+  created_company: "Company was successfully created."
+  created_realestate: "Realestate was successfully created."
   error_saving: prohibited this realestate from being saved
   message_sent: "Your message has been sent."
+  removed_picture: "Picture was successfully deleted."
+  removed_realestate: "Realestate was successfully destroyed."
+  search_placeholder: "Street, District..."
+  updated_company: "Company was successfully updated."
+  updated_realestate: "Realestate was successfully updated."
   activerecord:
     models:
       realestate:

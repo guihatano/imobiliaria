@@ -21,10 +21,10 @@
             <%= link_to t('home'), root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</a>
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= Realestate.human_attribute_name(:category) %></a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to "Aluguel", root_path({ :category => Realestate.category.rent }), class: "dropdown-item" %>
-              <%= link_to "Venda", root_path({ :category => Realestate.category.sale }), class: "dropdown-item" %>
+              <%= link_to t('rent', scope: ["enumerize.realestate.category"]), root_path({ :category => Realestate.category.rent }), class: "dropdown-item" %>
+              <%= link_to t('sale', scope: ["enumerize.realestate.category"]), root_path({ :category => Realestate.category.sale }), class: "dropdown-item" %>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -40,8 +40,8 @@
           </li>
         </ul>
         <%= form_tag(realestates_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control mr-sm-2" %>
-          <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+          <%= text_field_tag :search, params[:search], placeholder: t('search_placeholder'), class: "form-control mr-sm-2" %>
+          <%= submit_tag t('search'), class: "btn btn-outline-success my-2 my-sm-0" %>
         <% end %>
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
@@ -57,20 +57,12 @@
     </nav>
 
   <div class="container-fluid">
-    <% if notice.present? %>
-      <div class="alert alert-info alert-dismissible fade show" role="alert">
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %> alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <%= notice %>
-      </div>
-    <% end %>
-    <% if alert.present? %>
-      <div class="alert alert-alert alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <%= alert %>
+        <%= value %>
       </div>
     <% end %>
 

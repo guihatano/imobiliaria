@@ -45,7 +45,7 @@ class RealestatesController < ApplicationController
       if @realestate.save
         picture_params.each { |image| @realestate.pictures.create(image: image) } if picture_params
 
-        format.html { redirect_to @realestate, notice: 'Realestate was successfully created.' }
+        format.html { redirect_to @realestate, :flash => {:success => t('created_realestate') }}
         format.json { render :show, status: :created, location: @realestate }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class RealestatesController < ApplicationController
       if @realestate.update(realestate_params)
         picture_params.each { |image| @realestate.pictures.create(image: image) } if picture_params
 
-        format.html { redirect_to @realestate, notice: 'Realestate was successfully updated.' }
+        format.html { redirect_to @realestate, :flash => {:success => t('updated_realestate')}}
         format.json { render :show, status: :ok, location: @realestate }
       else
         format.html { render :edit }
@@ -75,7 +75,7 @@ class RealestatesController < ApplicationController
   def destroy
     @realestate.destroy
     respond_to do |format|
-      format.html { redirect_to realestates_url, notice: 'Realestate was successfully destroyed.' }
+      format.html { redirect_to realestates_url, :flash => {:success => t('removed_realestate')}}
       format.json { head :no_content }
     end
   end
