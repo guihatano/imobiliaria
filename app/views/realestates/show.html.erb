@@ -32,7 +32,7 @@
 
 <p>
   <strong><%= t('added') %>:</strong>
-  <%=l @realestate.created_at %>
+  <%= @realestate.created_at.strftime('%d/%m/%Y - %Hh%Mm') %>
 </p>
 
 <script>

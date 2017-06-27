@@ -7,6 +7,7 @@ en:
   removed_picture: "Picture was successfully deleted."
   removed_realestate: "Realestate was successfully destroyed."
   search_placeholder: "Street, District..."
+  update: "Update"
   updated_company: "Company was successfully updated."
   updated_realestate: "Realestate was successfully updated."
   activerecord:

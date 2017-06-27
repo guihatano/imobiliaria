@@ -196,10 +196,11 @@ footer .container ul {
 /* Login
 ---------------------------------*/
 
+.form-user-title,
 .form-signin-heading {
   max-width: 330px;
   padding-left: 15px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .form-forgot-heading {
@@ -208,12 +209,13 @@ footer .container ul {
   margin: 0 auto;
 }
 
+.form-user,
 .form-signin {
-  max-width: 330px;
+  max-width: 350px;
   padding: 15px;
   margin: 0 auto;
 }
-.form-signin-heading,
+
 .form-signin .checkbox {
   margin-bottom: 10px;
 }
