@@ -34,6 +34,7 @@ gem 'font-awesome-sass'
 gem 'enumerize'
 gem 'pry-rails'
 gem 'will_paginate', '~> 3.1.1'
+gem 'recaptcha', require: "recaptcha/rails"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

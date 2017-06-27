@@ -8,9 +8,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     
-    if @message.valid?
+    if verify_recaptcha && @message.valid?
       ContactMailer.new_message(@message).deliver
-      redirect_to contact_path, notice: t(:message_sent)
+      redirect_to contact_path, :flash => {:success => t(:message_sent)}
     else
       render :new
     end

@@ -1,6 +1,10 @@
+<% content_for :head do %>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+<% end %>
+
 <div class="row">
 
-  <div class="col-6">
+  <div class="col-md-6">
   <% if @message.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(@message.errors.count, t('error')) %> <%=t :error_saving %>:</h2>
@@ -34,6 +38,8 @@
         <%= message_form.text_area :content, placeholder: true, class: 'form-control' %>
       </div>
     
+      <%= recaptcha_tags class: 'field form-group' %>
+
       <div class="field form-group">
         <%= message_form.submit t('send'), class: "btn btn-success" %>
       </div>
@@ -41,7 +47,7 @@
   <% end %>
   </div>
   
-  <div class="col-6" >
+  <div class="col-md-6" >
     <% if @company.present? %>
       <h2 class="title"><%= @company.name %></h2>
       <div><%= @company.address %></div>
