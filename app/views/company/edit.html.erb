@@ -1,6 +1,8 @@
-<h1><%= t('editing_realestate') %></h1>
+<h1 class="title form-title"><%= t('editing_company') %></h1>
+
+<div class="form-buttons">
+	<%= link_to t('show'), @company, class: "btn btn-secondary" %>
+	<%= link_to t('back'), :back, class: "btn btn-secondary" %>
+</div>
 
 <%= render 'form', company: @company %>
-
-<%= link_to t('show'), @company, class: "btn btn-secondary" %>
-<%= link_to t('back'), :back, class: "btn btn-secondary" %>

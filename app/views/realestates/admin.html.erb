@@ -1,4 +1,4 @@
-<h1><%= t('admin_area') %></h1>
+<h1 class="title"><%= t('admin_area') %></h1>
 
 <% if user_signed_in? %>
   <%= link_to t('add_realestate'), new_realestate_path, class: "btn btn-primary btn-sm" %>
@@ -11,7 +11,7 @@
   <thead>
     <tr>
       <th><%= t('id') %></th>
-      <th><%= t('photo') %></th>
+      <th><%= Realestate.human_attribute_name(:cover) %></th>
       <th><%= t('address') %></th>
       <th colspan="3"></th>
     </tr>
@@ -33,7 +33,7 @@
 		      <% end %>
       	</td>
         <td><%= realestate.address %></td>
-        <td><%= link_to 'Edit', edit_realestate_path(realestate) %></td>
+        <td><%= link_to t('edit'), edit_realestate_path(realestate) %></td>
         <td>
         	<%= link_to realestate, method: :delete, data: { confirm: t('confirmation') } do %>
         		<i class="fa fa-trash-o"></i>

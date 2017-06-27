@@ -1,4 +1,4 @@
-<p>
+<p class="picture-show">
   <%@realestate.pictures.each do |picture|%>
     <%= image_tag picture.image.url(:thumb) %>
   <% end %>
@@ -32,7 +32,7 @@
 
 <p>
   <strong><%= t('added') %>:</strong>
-  <%=l @realestate.created_at %>
+  <%= @realestate.created_at.strftime('%d/%m/%Y - %Hh%Mm') %>
 </p>
 
 <script>

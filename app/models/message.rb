@@ -6,13 +6,8 @@ class Message
 
   attr_accessor :name, :email, :phone, :content
 
-  validates :name,
-    presence: true
-
-  validates :email,
-    presence: true
-
-  validates :content,
-    presence: true
+  validates :name, :content, :email, presence: true
+  validates :name, length: { minimum: 3 }, allow_blank: true
+  validates :email, email: true, allow_blank: true
 
 end

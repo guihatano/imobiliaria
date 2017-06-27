@@ -26,7 +26,7 @@ class CompanyController < ApplicationController
 
     respond_to do |format|
       if @company.save
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
+        format.html { redirect_to @company, :flash => {:success => t('created_company')}}
         format.json { render :show, status: :created, location: @company }
       else
         format.html { render :new }
@@ -38,7 +38,7 @@ class CompanyController < ApplicationController
 	def update
 		respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+        format.html { redirect_to @company, :flash => {:success => t('updated_company')}}
         format.json { render :show, status: :ok, location: @company }
       else
         format.html { render :edit }

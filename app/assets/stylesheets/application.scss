@@ -16,9 +16,19 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.alert {
+  margin-top: 1rem;
+}
+
+.title, .picture-show {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 /* Carousel base class */
 .carousel {
-  margin-bottom: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -71,8 +81,8 @@ img:hover {
 
 .not-found-image {
   text-align: center;
-  height: 100px;
-  width: 150px;
+  height: 112px; /* Same height of other pictures */
+  width: 160px;
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
@@ -186,10 +196,11 @@ footer .container ul {
 /* Login
 ---------------------------------*/
 
+.form-user-title,
 .form-signin-heading {
   max-width: 330px;
   padding-left: 15px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .form-forgot-heading {
@@ -198,12 +209,13 @@ footer .container ul {
   margin: 0 auto;
 }
 
+.form-user,
 .form-signin {
-  max-width: 330px;
+  max-width: 350px;
   padding: 15px;
   margin: 0 auto;
 }
-.form-signin-heading,
+
 .form-signin .checkbox {
   margin-bottom: 10px;
 }
@@ -260,9 +272,26 @@ footer .container ul {
   width: 50%;
 }
 
+.form-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-buttons {
+   display: inline-block;
+   margin-bottom: 1rem;
+}
+
 @media (max-width: 700px) {
   .form {
     width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .div-form-street, .div-form-st-number,
+  .div-form-phone, .div-form-city {
+    margin-bottom: 1rem;
   }
 }
 
