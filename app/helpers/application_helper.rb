@@ -36,4 +36,8 @@ module ApplicationHelper
 			when 'recaptcha_error' then "alert alert-danger"
 		end
 	end
+
+	def user_empty?
+		User.count == 0
+	end
 end

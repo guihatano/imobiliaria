@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 	
   resources :realestates
   delete '/realestates/:realestate_id/pictures/:id', to: 'pictures#destroy', as: :destroy_realestate_picture
-  devise_for :users
+	devise_for :users, controllers: { registrations: "registrations"}
 
 	get '/admin', to: 'realestates#admin', as: :admin
 
