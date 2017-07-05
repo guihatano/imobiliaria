@@ -1,0 +1,47 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to "Imobiliária", root_path, class: "navbar-brand" %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to t('home'), root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= Realestate.human_attribute_name(:category) %></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to t('rent', scope: ["enumerize.realestate.category"]), root_path({ :category => Realestate.category.rent }), class: "dropdown-item" %>
+          <%= link_to t('sale', scope: ["enumerize.realestate.category"]), root_path({ :category => Realestate.category.sale }), class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <%= link_to Realestate.human_attribute_name(:re_type), "", class: "nav-link dropdown-toggle", id: "navbarTypeMenuLink", 'data-toggle' => "dropdown" , aria: {haspopup: true, expanded: false} %>
+        <div class="dropdown-menu" aria-labelledby="navbarTypeMenuLink">
+          <% Realestate.re_type.values.each do |type| %>
+            <%= link_to t(type, scope: [:enumerize, :realestate, :re_type]), root_path({ :type => type }), class: "dropdown-item" %>
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('contact'), contact_path, class: "nav-link" %>
+      </li>
+    </ul>
+    <%= form_tag(realestates_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0") do %>
+      <%= text_field_tag :search, params[:search], placeholder: t('search_placeholder'), class: "form-control mr-sm-2" %>
+      <%= submit_tag t('search'), class: "btn btn-outline-success my-2 my-sm-0" %>
+    <% end %>
+
+    <ul class="navbar-nav mr-0">
+      <li class="nav-item">
+        <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <% else %>
+          <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+        <% end %>
+      </li>
+    </ul>
+
+  </div>
+</nav>
