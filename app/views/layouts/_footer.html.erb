@@ -16,9 +16,8 @@
         <% if @agency.present? %>
           <p><i class="fa fa-map-marker"></i> <%= @agency.street_and_number %></p>
           <p> <%= @agency.city_and_state %></p>
-          <p>
-            <%= @agency.email %>
-          </p>
+          <p><i class="fa fa-phone"></i> <%= @agency.phone %></p>
+          <p><%= @agency.email %></p>
         <% end %>
       </div>
 
