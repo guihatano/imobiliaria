@@ -1,8 +1,10 @@
 en:
   confirmation: "Are you sure?"
+  contact_us: "Contact us"
   created_company: "Company was successfully created."
   created_realestate: "Realestate was successfully created."
   error_saving: prohibited this realestate from being saved
+  follow_us: Follow us
   message_sent: "Your message has been sent."
   removed_picture: "Picture was successfully deleted."
   removed_realestate: "Realestate was successfully destroyed."

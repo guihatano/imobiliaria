@@ -81,8 +81,8 @@ img:hover {
 
 .not-found-image {
   text-align: center;
-  height: 112px; /* Same height of other pictures */
-  width: 160px;
+  height: 212px; /* Same height of other pictures */
+  width: 300px;
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
@@ -94,7 +94,7 @@ img:hover {
 
 .not-found-image i {
   position: relative;
-  top: 25%;
+  top: 40%;
   color: #1a1a1a;
 }
 
@@ -131,12 +131,15 @@ footer .container {
 	width: 100%;
 }
 
-footer .container .footer-follow {
+footer .container .footer-follow,
+footer .container .footer-contact {
 	text-align: center;
 }
 
-footer .container p {
-	margin-top: 10px;
+footer .container .footer-contact p {
+  color: grey;
+	margin-top: 0;
+  margin-bottom: 0;
 }
 
 footer .copyright {
@@ -153,17 +156,13 @@ footer .container ul {
 	list-style: none;
 }
 
-.footer-menu {
+.footer-follow, .footer-contact, .footer-menu {
 	padding-top: 20px;
 }
 
 .footer-menu li {
 	padding-top: 5px;
-	padding-left: 40%
-}
-
-.footer-follow {
-	padding-top: 20px;
+	padding-left: 10%
 }
 
 .footer-menu ul,
@@ -181,7 +180,7 @@ footer .container ul {
 	padding-left: 5px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 800px) {
 	.footer-menu {
 		text-align: center;
 	}

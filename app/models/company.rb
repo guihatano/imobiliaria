@@ -11,4 +11,14 @@ class Company < ApplicationRecord
 
 		address
 	end
+
+	def street_and_number
+		address = "#{street}"
+		st_number.present? ? address << ", #{st_number}" : ""
+	end
+
+	def city_and_state
+		address = city.empty? ? "" : city
+		state.empty? ? "" : address << " - #{state}"
+	end
 end

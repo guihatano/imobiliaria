@@ -37,9 +37,9 @@
     <div class="col-md-4">
       <%= link_to realestate do %>
         <% if realestate.cover.present? %>
-          <%= image_tag realestate.pictures.find(realestate.cover).image.url(:thumb) %>
+          <%= image_tag realestate.pictures.find(realestate.cover).image.url(:medium) %>
         <% elsif realestate.pictures.present? %>
-          <%= image_tag realestate.pictures.first.image.url(:thumb) %>
+          <%= image_tag realestate.pictures.first.image.url(:medium) %>
         <% else %>
           <div class="not-found-image"><i class="fa fa-camera fa-2x"></i></div>
         <% end %>

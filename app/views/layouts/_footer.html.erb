@@ -2,16 +2,27 @@
   <div class="container container-fluid">
     <div class="row">
 
-      <div class="footer-follow col-md-6">
-        <h4>Follow us</h4>
+      <div class="footer-follow col-md-4">
+        <h4><%= t('follow_us') %></h4>
         <ul>
           <li><a href="http://www.facebook.com/guihatano" target="_blank"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
           <li><a href="https://twitter.com/guihatano" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a></li>
           <li><a href="https://www.instagram.com/guihatano/" target="_blank"><i class="fa fa-instagram fa-3x"></i></a></li>
         </ul>
       </div>
+      
+      <div class="footer-contact col-md-4">
+        <h4><%= t('contact_us') %></h4>
+        <% if @agency.present? %>
+          <p><i class="fa fa-map-marker"></i> <%= @agency.street_and_number %></p>
+          <p> <%= @agency.city_and_state %></p>
+          <p>
+            <%= @agency.email %>
+          </p>
+        <% end %>
+      </div>
 
-      <div class="footer-menu col-md-6">
+      <div class="footer-menu col-md-4">
         <ul>
           <li><%= link_to "Home", root_path %></li>
 
@@ -28,6 +39,5 @@
   </div>
   <div class="copyright">
     <p>Copyright 2017 guiHatano Co. All Rights Reserved</p>
-    <p>Code licensed under <a href="https://opensource.org/licenses/mit-license.html" target="_blank">MIT License</a></p>
   </div>
 </footer>
