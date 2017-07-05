@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Realestate, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should enumerize(:category).in(:rent, :sale, :both) }
+
+  it { should enumerize(:re_type).in(:house, :apartment, :rural, :plot, :shed) }
 end
