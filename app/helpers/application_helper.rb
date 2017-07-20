@@ -47,7 +47,7 @@ module ApplicationHelper
 
 		pictures.each_with_index do |picture, index|
 			html += <<-HTML
-	    <div class="column">
+	    <div class="col">
 	      #{image_tag(picture.image.url(:thumb), onclick: "openModal();currentSlide(#{index+1})", class: 'hover-shadow')}
 	    </div>
 	    HTML
@@ -73,8 +73,8 @@ module ApplicationHelper
     end
 
     html += <<-HTML
-			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<a class="modal-prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="modal-next" onclick="plusSlides(1)">&#10095;</a>
     HTML
 
 	  # Close div modal
