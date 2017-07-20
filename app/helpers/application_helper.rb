@@ -47,7 +47,7 @@ module ApplicationHelper
 
 		pictures.each_with_index do |picture, index|
 			html += <<-HTML
-	    <div class="col">
+	    <div class="col col-md-auto">
 	      #{image_tag(picture.image.url(:thumb), onclick: "openModal();currentSlide(#{index+1})", class: 'hover-shadow')}
 	    </div>
 	    HTML
