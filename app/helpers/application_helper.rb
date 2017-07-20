@@ -40,4 +40,49 @@ module ApplicationHelper
 	def user_empty?
 		User.count == 0
 	end
+
+	def lightbox_helper(pictures)
+
+		html = '<div class="row">'
+
+		pictures.each_with_index do |picture, index|
+			html += <<-HTML
+	    <div class="column">
+	      #{image_tag(picture.image.url(:thumb), onclick: "openModal();currentSlide(#{index+1})", class: 'hover-shadow')}
+	    </div>
+	    HTML
+	  end
+
+	  # Close div row
+	  html << '</div>'
+
+	  # Modal
+	  html += <<-HTML
+	  <div id="myModal" class="modal">
+		  <span class="close cursor" onclick="closeModal()">&times;</span>
+		  <div class="modal-content">
+	  HTML
+
+	  pictures.each_with_index do |picture, index|
+			html += <<-HTML
+      <div class="mySlides">
+        <div class="numbertext">#{index+1} / #{@realestate.pictures.count}</div>
+          #{image_tag(picture.image.url, class: 'modal-image')}
+      </div>
+      HTML
+    end
+
+    html += <<-HTML
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+    HTML
+
+	  # Close div modal
+	  html += <<-HTML
+			</div>
+	  </div>
+	  HTML
+
+	  html.html_safe
+	end
 end
