@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
 	get '/contact', to: 'messages#new', as: :contact
 	post 'contact', to: 'messages#create'
+
+	post '/realestates/:id', to: 'realestates#send_message'
 end

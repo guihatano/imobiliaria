@@ -27,7 +27,7 @@ pt-BR:
         kitchens: "Cozinhas"
         living_rooms: "Salas"
         dining_rooms: "Salas de Jantar"
-        parking_spaces: "Vagas garagem"
+        parking_spaces: "Vagas na garagem"
       company:
         name: "Nome"
         phone: "Telefone"

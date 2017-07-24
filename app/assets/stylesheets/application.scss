@@ -17,13 +17,20 @@
 @import "font-awesome";
 @import "realestates";
 
-.alert {
+.alert,
+.margin-top {
   margin-top: 1rem;
 }
 
 .title, .picture-show {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+pre {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 /* Carousel base class */
