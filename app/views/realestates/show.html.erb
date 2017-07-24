@@ -58,7 +58,7 @@
 </div>
 
 <div class="social-share-links">
-  <h5><i class="fa fa-share-alt"></i> Compartilhar</h5>
+  <h5><i class="fa fa-share-alt"></i> <%= t(:share) %></h5>
   <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://www.facebook.com/sharer/sharer.php?u=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
     <i class="fa fa-2x fa-facebook-square share-link"></i>
   <% end %>

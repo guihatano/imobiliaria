@@ -35,6 +35,7 @@ pt-BR:
   send: "Enviar"
   search: "Buscar"
   search_placeholder: "Rua, Bairro..."
+  share: "Compartilhar"
   show: "Visualizar"
   social_networks: "Redes Sociais"
   to_config: "Configurar"
@@ -44,67 +45,3 @@ pt-BR:
   updated_company: "Imobiliária atualizada com sucesso."
   updated_realestate: "Imóvel atualizado com sucesso."
   wrote: "escreveu"
-  activerecord:
-    models:
-      realestate: 
-        one: "Imóvel"
-        other: "Imóveis"
-      company:
-        one: "Imobiliária"
-        other: "Imobiliárias"
-      message: "Mensagem"
-    attributes:
-      realestate:
-        re_type: "Tipo"
-        street: "Rua"
-        district: "Bairro"
-        city: "Cidade"
-        state: "Estado"
-        category: "Categoria"
-        price: "Preço"
-        description: "Descrição"
-        photo: "Foto"
-        cover: "Capa"
-      company:
-        name: "Nome"
-        phone: "Telefone"
-        cellphone: "Celular"
-        creci: "CRECI"
-        email: "Email"
-        street: "Rua"
-        st_number: "Número"
-        district: "Bairro"
-        city: "Cidade"
-        state: "Estado"
-        facebook: "Facebook"
-        twitter: "Twitter"
-        instagram: "Instagram"
-        google_plus: "Google Plus"
-      message:
-        name: "Nome"
-        email: "Email"
-        phone: "Telefone"
-        content: "Mensagem"
-  enumerize:
-    realestate:
-      re_type:
-        house: "Casa"
-        apartment: "Apartamento"
-        rural: "Área Rural"
-        plot: "Terreno"
-        shed: "Galpão"
-      category:
-        rent: "Aluguel"
-        sale: "Venda"
-        both: "Aluguel e venda"
-  helpers:
-    placeholder:
-      message:
-        name: "Nome"
-        email: "Email"
-        phone: "Telefone"
-        content: "Mensagem"
-  will_paginate:
-    previous_label: "Anterior"
-    next_label: "Próximo"
-    page_gap: "&hellip;"

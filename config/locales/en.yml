@@ -9,22 +9,7 @@ en:
   removed_picture: "Picture was successfully deleted."
   removed_realestate: "Realestate was successfully destroyed."
   search_placeholder: "Street, District..."
+  share: "Share"
   update: "Update"
   updated_company: "Company was successfully updated."
   updated_realestate: "Realestate was successfully updated."
-  activerecord:
-    models:
-      realestate:
-        one: "Realestate"
-        other: "Realestates"
-    attributes:
-      realestate:
-        re_type: "Type"
-        street: "Street"
-        district: "District"
-        city: "City"
-        state: "State"
-        category: "Category"
-        price: "Price"
-        description: "Description"
-        photo: "Photo"

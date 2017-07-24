@@ -1,0 +1,77 @@
+en:
+  models_and_attributes: &models_and_attributes
+    models:
+      realestate: 
+        one: "Realestate"
+        other: "Realestates"
+      company:
+        one: "Company"
+        other: "Companies"
+      message: "Message"
+    attributes:
+      realestate:
+        re_type: "Type"
+        street: "Street"
+        district: "District"
+        city: "City"
+        state: "State"
+        category: "Category"
+        price: "Price"
+        description: "Description"
+        photo: "Photo"
+        cover: "Cover"
+        rooms: "Rooms"
+        ensuites: "Ensuites"
+        bathrooms: "Bathrooms"
+        toilets: "Toilets"
+        kitchens: "Kitchens"
+        living_rooms: "Living Rooms"
+        dining_rooms: "Dining Rooms"
+        parking_spaces: "Parking"
+      company:
+        name: "Name"
+        phone: "Phone"
+        cellphone: "Cellphone"
+        creci: "CRECI"
+        email: "Email"
+        street: "Street"
+        st_number: "Number"
+        district: "District"
+        city: "City"
+        state: "State"
+        facebook: "Facebook"
+        twitter: "Twitter"
+        instagram: "Instagram"
+        google_plus: "Google Plus"
+      message:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        content: "Message"
+  activerecord:
+    <<: *models_and_attributes
+  activemodel:
+    <<: *models_and_attributes
+  enumerize:
+    realestate:
+      re_type:
+        house: "House"
+        apartment: "Apartament"
+        rural: "Rural Area"
+        plot: "Land Plot"
+        shed: "Shed"
+      category:
+        rent: "Rental"
+        sale: "Sale"
+        both: "Rental and Sale"
+  helpers:
+    placeholder:
+      message:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        content: "Message"
+  will_paginate:
+    previous_label: "Previous"
+    next_label: "Next"
+    page_gap: "&hellip;"
