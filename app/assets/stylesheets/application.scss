@@ -373,3 +373,12 @@ footer .container ul {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
 }
+
+.page-link {
+  color: #006600;
+}
+
+.page-item.active .page-link {
+  background-color: #008000;
+  border-color: #008000;
+}
