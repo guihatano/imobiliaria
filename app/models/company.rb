@@ -1,6 +1,7 @@
 class Company < ApplicationRecord
 
 	validates :name, :email, presence: true
+	validates :facebook, :twitter, :instagram, :google_plus, allow_blank: true, url: true
 
 	def address
 		address = "#{street}"
