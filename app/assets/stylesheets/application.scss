@@ -17,13 +17,20 @@
 @import "font-awesome";
 @import "realestates";
 
-.alert {
+.alert,
+.margin-top {
   margin-top: 1rem;
 }
 
 .title, .picture-show {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+pre {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 /* Carousel base class */
@@ -365,4 +372,13 @@ footer .container ul {
 .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
+}
+
+.page-link {
+  color: #006600;
+}
+
+.page-item.active .page-link {
+  background-color: #008000;
+  border-color: #008000;
 }

@@ -1,5 +1,5 @@
 class RealestatesController < ApplicationController
-  before_action :set_realestate, only: [:show, :edit, :update, :destroy]
+  before_action :set_realestate, only: [:show, :edit, :update, :destroy, :send_message]
 
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :admin]
 
@@ -25,6 +25,7 @@ class RealestatesController < ApplicationController
   # GET /realestates/1
   # GET /realestates/1.json
   def show
+    @message = Message.new
   end
 
   # GET /realestates/new
@@ -85,6 +86,21 @@ class RealestatesController < ApplicationController
     @company = Company.all.present?
   end
 
+  def send_message
+    @message = Message.new(message_params)
+
+    respond_to do |format|
+      if verify_recaptcha && @message.valid?
+        ContactMailer.new_message(@message).deliver
+        format.html { redirect_to @realestate, :flash => {:success => t(:message_sent)}}
+        format.json { render :show, status: :ok, location: @realestate }
+      else
+        format.html { render :show }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_realestate
@@ -98,5 +114,9 @@ class RealestatesController < ApplicationController
 
     def picture_params
       params.fetch(:images, {})
+    end
+
+    def message_params
+      params.require(:message).permit(:name, :email, :phone, :content)
     end
 end

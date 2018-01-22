@@ -5,9 +5,40 @@
       <div class="footer-follow col-md-4">
         <h4><%= t('follow_us') %></h4>
         <ul>
-          <li><a href="http://www.facebook.com/guihatano" target="_blank"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
-          <li><a href="https://twitter.com/guihatano" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a></li>
-          <li><a href="https://www.instagram.com/guihatano/" target="_blank"><i class="fa fa-instagram fa-3x"></i></a></li>
+          <% if @agency.present? %>
+            <% if @agency.facebook.present? %>
+              <li>
+                <%= link_to @agency.facebook, target: "_blank" do %>
+                  <i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <% if @agency.twitter.present? %>
+              <li>
+                <%= link_to @agency.twitter, target: "_blank" do %>
+                  <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <% if @agency.instagram.present? %>
+              <li>
+                <%= link_to @agency.instagram, target: "_blank" do %>
+                  <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                <% end %>
+              </li>
+            <% end %>
+            <% if @agency.google_plus.present? %>
+              <li>
+                <%= link_to @agency.google_plus, target: "_blank" do %>
+                  <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+                <% end %>
+              </li>
+            <% end %>
+          <% else %>
+            <li><a href="http://www.facebook.com/guihatano" target="_blank"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/guihatano" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+            <li><a href="https://www.instagram.com/guihatano/" target="_blank"><i class="fa fa-instagram fa-3x"></i></a></li>
+          <% end %>
         </ul>
       </div>
       

@@ -7,8 +7,8 @@ class Picture < ApplicationRecord
 				:processors => [:watermark],
 				:watermark_path => "#{Rails.root}/app/assets/images/logo.png",
 				:geometry => '800>',
-				:position => 'SouthEast',
-				:watermark_dissolve => 70,
+				:position => 'Center',
+				:watermark_dissolve => 20,
 				:auto_orient => false
 			}},
 		default_url: "/images/:style/missing.png"

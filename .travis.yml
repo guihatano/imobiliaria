@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.4.0
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS imobiliaria_test;'

@@ -61,6 +61,52 @@
     <%= f.text_field :price, class: 'form-control', placeholder: Realestate.human_attribute_name(:price) %>
   </div>
 
+  <div class="field form-group row">
+    <%= f.label Realestate.human_attribute_name(:rooms), class: 'col-2 col-form-label' %>
+    <div class="col-2">
+      <%= f.text_field :rooms, class: 'form-control', placeholder: Realestate.human_attribute_name(:rooms) %>
+    </div>
+
+    <%= f.label Realestate.human_attribute_name(:bathrooms), class: 'col-2 col-form-label' %>
+    <div class="col-2">
+      <%= f.text_field :bathrooms, class: 'form-control', placeholder: Realestate.human_attribute_name(:bathrooms) %>
+    </div>
+
+    <%= f.label Realestate.human_attribute_name(:ensuites), class: 'col-2 col-form-label' %>
+    <div class="col-2">
+      <%= f.text_field :ensuites, class: 'form-control', placeholder: Realestate.human_attribute_name(:ensuites) %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= f.label Realestate.human_attribute_name(:kitchens), class: 'col-2 col-form-label' %>
+    <div class="col-2">
+      <%= f.text_field :kitchens, class: 'form-control', placeholder: Realestate.human_attribute_name(:kitchens) %>
+    </div>
+
+    <%= f.label Realestate.human_attribute_name(:living_rooms), class: 'col-2 col-form-label' %>
+    <div class="col-2">
+      <%= f.text_field :living_rooms, class: 'form-control', placeholder: Realestate.human_attribute_name(:living_rooms) %>
+    </div>
+
+    <%= f.label Realestate.human_attribute_name(:toilets), class: 'col-2 col-form-label' %>
+    <div class="col-2">
+      <%= f.text_field :toilets, class: 'form-control', placeholder: Realestate.human_attribute_name(:toilets) %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= f.label Realestate.human_attribute_name(:parking_spaces), class: 'col-2' %>
+    <div class="col-2">
+      <%= f.text_field :parking_spaces, class: 'form-control', placeholder: Realestate.human_attribute_name(:parking_spaces) %>
+    </div>
+
+    <%= f.label Realestate.human_attribute_name(:dining_rooms), class: 'col-2' %>
+    <div class="col-2">
+      <%= f.text_field :dining_rooms, class: 'form-control', placeholder: Realestate.human_attribute_name(:dining_rooms) %>
+    </div>
+  </div>
+
   <div class="field form-group">
     <%= f.text_area :description, class: 'form-control', placeholder: Realestate.human_attribute_name(:description) %>
   </div>

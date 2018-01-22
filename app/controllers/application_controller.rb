@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
   def get_company
   	begin
-  		@agency = Company.all.first
+  		@agency = Company.first
   	rescue ActiveRecord::RecordNotFound
   		@agency = nil
   	end

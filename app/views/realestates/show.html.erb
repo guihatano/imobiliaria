@@ -1,37 +1,106 @@
+<% if @message.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+        <% @message.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+<h3 class="title"><%= "#{t(:realestate).capitalize} Ref: #{@realestate.id}" %></h3>
+
 <p class="picture-show">
   <%= lightbox_helper(@realestate.pictures)%>
 </p>
 
-<h3>
+
+<div class="row justify-content-between">
+  <div class="col-sm-4">
+    <p>
+      <%= realestate_price(@realestate) %>
+    </p>
+    <ul class="list-group">
+      <li class="list-group-item justify-content-between">
+        <%= Realestate.human_attribute_name(:re_type) %>
+        <span class="badge badge-default badge-pill"><%=t @realestate.re_type, scope: [:enumerize, :realestate, :re_type] %></span>
+      </li>
+      <li class="list-group-item justify-content-between">
+        <%= Realestate.human_attribute_name(:category) %>
+        <span class="badge badge-default badge-pill"><%=t @realestate.category, scope: [:enumerize, :realestate, :category] %></span>
+      </li>
+      <li class="list-group-item justify-content-between">
+        <%= Realestate.human_attribute_name(:rooms) %>
+        <span class="badge badge-default badge-pill"><%= @realestate.rooms %></span>
+      </li>
+      <li class="list-group-item justify-content-between">
+        <%= Realestate.human_attribute_name(:bathrooms) %>
+        <span class="badge badge-default badge-pill"><%= @realestate.bathrooms %></span>
+      </li>
+      <li class="list-group-item justify-content-between">
+        <%= Realestate.human_attribute_name(:ensuites) %>
+        <span class="badge badge-default badge-pill"><%= @realestate.ensuites %></span>
+      </li>
+      <li class="list-group-item justify-content-between">
+        <%= Realestate.human_attribute_name(:living_rooms) %>
+        <span class="badge badge-default badge-pill"><%= @realestate.living_rooms %></span>
+      </li>
+      <li class="list-group-item justify-content-between">
+        <%= Realestate.human_attribute_name(:parking_spaces) %>
+        <span class="badge badge-default badge-pill"><%= @realestate.parking_spaces %></span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-6">
+
+    <h4>Alguma dúvida?</h4>
+
+    <%= form_for @message, url: @realestate do |message_form| %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="field form-group">
+            <%= message_form.text_field :name, placeholder: true, class: 'form-control', required: true %>
+          </div>
+
+          <div class="field form-group">
+            <%= message_form.email_field :email, placeholder: true, class: 'form-control', required: true %>
+          </div>
+
+          <div class="field form-group">
+            <%= message_form.phone_field :phone, placeholder: true, class: 'form-control', pattern: '(^\(\d{2}\)\s\d{4,5}(-|\s)\d{4,5}|^\d{2}\s\d{4,5}(-|\s)\d{4,5})' %>
+          </div>
+
+          <%= recaptcha_tags class: 'field form-group' %>
+        </div>
+        <div class="col-md-6">
+          <div class="field form-group">
+            <%= message_form.text_area :content, placeholder: true, class: 'form-control', rows: 7, required: true %>
+          </div>
+
+          <div class="field form-group">
+            <%= message_form.submit t('send'), class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<% if @realestate.description.present? %>
+  <div class="row">
+    <div class="col-12 col-md-auto margin-top">
+      <strong><%= Realestate.human_attribute_name(:description) %>:</strong>
+      <pre><%= @realestate.description %></pre>
+    </div>
+  </div>
+<% end %>
+
+<h3 class="title">
   <strong><i class="fa fa-map-marker"></i></strong>
   <%= @realestate.street %>, <%= @realestate.district %>,
   <%= @realestate.city %> - <%= @realestate.state %>
 </h3>
-
-<p>
-  <strong><%= Realestate.human_attribute_name(:re_type) %>:</strong>
-  <%=t @realestate.re_type, scope: [:enumerize, :realestate, :re_type] %>
-</p>
-
-<p>
-  <strong><%= Realestate.human_attribute_name(:category) %>:</strong>
-  <%=t @realestate.category, scope: [:enumerize, :realestate, :category] %>
-</p>
-
-<p>
-  <strong><%= Realestate.human_attribute_name(:price) %>:</strong>
-  <%= number_to_currency @realestate.price %>
-</p>
-
-<p>
-  <strong><%= Realestate.human_attribute_name(:description) %>:</strong>
-  <%= @realestate.description %>
-</p>
-
-<p>
-  <strong><%= t('added') %>:</strong>
-  <%= @realestate.created_at.strftime('%d/%m/%Y - %Hh%Mm') %>
-</p>
 
 <script>
       function initMap() {
@@ -58,7 +127,7 @@
 </div>
 
 <div class="social-share-links">
-  <h5><i class="fa fa-share-alt"></i> Compartilhar</h5>
+  <h5><i class="fa fa-share-alt"></i> <%= t(:share) %></h5>
   <%= link_to "#", class: "hvr-float-shadow", :onclick => "MyWindow=window.open('https://www.facebook.com/sharer/sharer.php?u=#{request.url}','MyWindow', width=600, height=300); return false;" do %>
     <i class="fa fa-2x fa-facebook-square share-link"></i>
   <% end %>
@@ -70,7 +139,10 @@
   <% end %>
 </div>
 
-
+<p>
+  <strong><%= t('added') %>:</strong>
+  <%= @realestate.created_at.strftime('%d/%m/%Y - %Hh%Mm') %>
+</p>
 
 
 <% if user_signed_in? %>

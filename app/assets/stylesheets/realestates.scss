@@ -14,7 +14,7 @@
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
@@ -100,7 +100,8 @@
 }
 
 img.hover-shadow {
-  transition: 0.3s
+  transition: 0.3s;
+  margin-bottom: 0.5rem;
 }
 
 .hover-shadow:hover {
